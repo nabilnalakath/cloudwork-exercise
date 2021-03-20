@@ -21,29 +21,32 @@ export interface WorkloadItemProps extends
 
 const WorkloadItem: React.SFC<WorkloadItemProps> = (props) => (
   <div className="WorkloadItem">
-    <div>
-      <h3 className="WorkloadItem-heading">Workload #{props.id}</h3>
-      <span className="WorkloadItem-subHeading">Complexity: {props.complexity}</span>
-    </div>
-    <div>
-      {props.status === 'WORKING'
-        ? (
-          <>
-            <span><TimeAgo date={props.completeDate} /></span>
-            <button 
-              className="WorkloadItem-secondaryButton" 
-              onClick={props.onCancel}
-            >
-              Cancel
-            </button>
-          </>
-        )
-        : (
-          <span className="WorkloadItem-statusText">{props.status.toLowerCase()}</span>
-        )
-      }
-    </div>
+  <div>
+    <h3 className="WorkloadItem-heading">Workload #{props.id}</h3>
+    <span className="WorkloadItem-subHeading">
+      Complexity: {props.complexity}
+    </span>
   </div>
+  <div>
+    {props.status === "WORKING" ? (
+      <>
+        <span className="timeStatus">
+          <TimeAgo date={props.completeDate} />
+        </span>
+        <button
+          className="button WorkloadItem-secondaryButton"
+          onClick={props.onCancel}
+        >
+          Cancel
+        </button>
+      </>
+    ) : (
+      <span className="WorkloadItem-statusText">
+        {props.status.toLowerCase()}
+      </span>
+    )}
+  </div>
+</div>
 );
 
 

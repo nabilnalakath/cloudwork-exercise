@@ -1,0 +1,33 @@
+.WorkloadItem {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+    .WorkloadItem-heading {
+      font-size: 22px;
+      color: $color_2;
+      font-weight: 400;
+      margin-bottom: 7px;
+    }
+    .WorkloadItem-subHeading {
+      font-size: 17px;
+      color: $color_2;
+      font-weight: 400;
+    }
+    .timeStatus {
+      margin-right: 20px;
+      color: $color_2;
+      font-size: 17px;
+      font-weight: 400;
+    }
+    .WorkloadItem-statusText{
+      color: $color_1;
+      font-size: 17px;
+      font-weight: 500;
+    }
+    .button.WorkloadItem-secondaryButton {
+      background: $color_3;
+      color: $color_2;
+    }
+  }
+  
