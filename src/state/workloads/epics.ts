@@ -1,5 +1,5 @@
 import { combineEpics, Epic } from 'redux-observable';
-import { filter, mergeMap, map} from 'rxjs/operators';
+import { filter, mergeMap, map,tap} from 'rxjs/operators';
 import { isActionOf } from 'typesafe-actions';
 
 import { RootAction, RootState } from '../reducer';
@@ -14,6 +14,7 @@ const logWorkloadSubmissions: AppEpic = (action$, state$) => (
   action$.pipe(
     filter(isActionOf(workloadsActions.submit)),
     map((action) => action.payload),
+    tap((payload) => console.log('Workload submitted', payload)),
     mergeMap(({ complexity }) =>
       workloadService
         .create({ complexity })
