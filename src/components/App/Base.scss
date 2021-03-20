@@ -108,7 +108,7 @@ main {
 }
 .full--width-wrapper {
   border: 3px solid $color_1;
-  height: calc(100vh - 30px);
+  height: 100%;
   border-top: 30px solid $color_1;
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
