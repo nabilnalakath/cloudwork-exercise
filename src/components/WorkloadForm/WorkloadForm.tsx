@@ -30,27 +30,37 @@ class WorkloadForm extends React.PureComponent<WorkloadFormProps, WorkloadFormSt
 
   render() {
     return (
+      <div className="form--container">
       <form>
         <h2>Create workload</h2>
-        
-        <div>
+
+        <div className="workload--slideContainer">
           <label>
-            Complexity: {this.state.complexity}
-            <br />
-            <input 
-              value={this.state.complexity} 
-              onChange={(e) => this.setState({ complexity: Number(e.target.value) })} 
-              type="range" 
-              min="1" 
-              max="10" 
+            <span>Complexity: {this.state.complexity}</span>
+            <input
+              value={this.state.complexity}
+              onChange={(e) =>
+                this.setState({ complexity: Number(e.target.value) })
+              }
+              className="slider"
+              type="range"
+              min="1"
+              max="10"
             />
           </label>
         </div>
 
         <div>
-          <button onClick={this.handleSubmit} type="submit">Start work</button>
+          <button
+            onClick={this.handleSubmit}
+            type="submit"
+            className="button submit-form"
+          >
+            Start work
+          </button>
         </div>
       </form>
+    </div>
     );
   }
 }

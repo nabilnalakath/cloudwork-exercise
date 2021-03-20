@@ -1,0 +1,11 @@
+@media only screen and (max-width: 767px) {
+    .workloads--list,
+    .workloads--form {
+      max-width: 100%;
+      flex: 0 0 100%;
+    }
+    .form--container {
+      margin-top: 10px;
+    }
+  }
+  

@@ -1,0 +1,11 @@
+.workloads--list-item {
+    li {
+      display: flex;
+      align-items: center;
+      list-style-type: none;
+      border: 2px solid $color_2;
+      padding: 25px 20px;
+      margin-bottom: 15px;
+    }
+  }
+  

@@ -19,20 +19,22 @@ export interface WorkloadListProps extends
   WorkloadListDispatchProps {}
 
 
-const WorkloadList: React.SFC<WorkloadListProps> = ({ workloads, cancelWorkload }) => (
-  !workloads.length 
-    ? (
-      <span>No workloads to display</span>
-    )
-  : (
-    <ol>
+const WorkloadList: React.SFC<WorkloadListProps> = ({ workloads, cancelWorkload }) => 
+(
+  !workloads.length ? (
+    <span>No workloads to display</span>
+  ) : (
+    <ol className="workloads--list-item">
       {workloads.map((workload) => (
         <li key={workload.id}>
-          <WorkloadItem {...workload} onCancel={() => cancelWorkload(workload.id)} />
+          <WorkloadItem
+            {...workload}
+            onCancel={() => cancelWorkload(workload.id)}
+          />
         </li>
       ))}
     </ol>
-  )
+)
 );
 
 
